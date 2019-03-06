@@ -141,6 +141,10 @@ try {
              config.getQosServerConfig().setDir(QOS_CACHE_DIR);
          }
 
+         config.setFileLogLevel("DEBUG");
+         config.setLogRotationCount(3);
+         config.setLogRotationSize(1024 * 1024 * 50);
+
          Poss.initKeyStoreData(keyStoreStr, config.getDir());
 
          config.setKeyPassphrase(passPhrase);
